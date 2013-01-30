@@ -1,0 +1,34 @@
+/*
+
+Project: Anvil
+Credits:
+Copyright:
+
+*/
+
+
+// Anvil featuring HTML5 Boilerplate and Bootstrap
+//
+// What follows is the result of much research on cross-browser styling.
+// Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+// Kroc Camen, and the H5BP dev community and team.
+
+// Imported styles
+@import "scss/_variables"; // Global variables including colors and font sets
+@import "scss/_mixins"; // Contains all the variables, mixins and MORE!
+@import "scss/_normalize"; // Normalize.css + a goody or two
+@import "scss/_base"; // Contains base element styling
+
+// Begin partials
+@import "scss/partials/_buttons"; // Funk button styles
+@import "scss/partials/_form"; // Form and input styles
+@import "scss/partials/_grid-responsive"; // Responsive Bootstrap grid
+@import "scss/partials/_menu-hamburger"; // Responsive slide-in "hamburger icon" menu
+// End partials
+
+@import "scss/_main"; // Main styles go here
+@import "scss/_media-queries"; // Contains media query styles. Break up into _tablet, _phone, etc if necessary.
+@import "scss/_chrome-frame"; // Style for Chrome Frame prompt
+@import "scss/_helper"; // Some fun helper classes
+@import "scss/_ie"; // IE specific styling
+@import "scss/_print"; // Print styling
