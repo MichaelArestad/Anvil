@@ -1,4 +1,4 @@
-![Hammer icon](img/anvil.svg "Clang!")
+![Hammer icon](http://anvil.michaelarestad.com/img/anvil.svg "Clang!")
 
 # A front-end template for Hammer.
 
