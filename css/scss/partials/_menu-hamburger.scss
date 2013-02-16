@@ -4,17 +4,25 @@
 // Almost entirely based on Tim Pietrusky's Off Canvas menu:
 // http://codepen.io/TimPietrusky/pen/CLIsl
 //
-// Refer to hamburger.html for setup
+// Refer to hamburger.html as an example.
+//
+// Setup:
+// 1. You need to add the class .hamburger to the body.
+// 2. Copy the input and following label from hamburger.html and paste them
+//    above your menu.
+// 3. Add the class .hamburger-nav to the menu container (nav or div).
+// 4. Add the class .condiments to the element containing all elements on the
+//    website below the menu.
 // ==========================================================================
 
 html,
 .hamburger {
     width: 100%;
-    height: 100%;
 }
 
-// dummy content
-.content {
+// Your content goes in this
+.condiments {
+    width: 100%;
     padding: 2.5em 1.875em 1.875em; // 40/16 35/16
     float: left;
     @include transition(margin .3s ease-in-out);
@@ -36,66 +44,40 @@ html,
 
 .hamburger-label {
     display: none;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
-    margin: 10px 0 0 10px;
-    padding: .35em;
-    width: 35px;
-    height: 35px;
-    background: rgba(255,255,255,.1);
-    @include border-radius(35px);
-    font-size: 1.1em;
-    line-height: 1.7em;
-    color: #0d72b2;
+    margin: .6666666667em 0 0 .6666666667em; // 10/15
+    padding: .4em; // 6/15
+    width: 2.8em; // 42/15
+    height: 2.3333333333em; // 35/15
+    background: #f5f7f7;
+    @include border-radius(3px);
+    font-size: .9375em; // 15/16
+    font-family: Arial, sans-serif;
+    line-height: .7333333333em; // 11/15
+    color: #777;
     cursor: pointer;
     user-select: none;
     @include transition(color .3s ease-in-out);
 }
 
-// big screens
+// Large screens
 .hamburger-nav {
     position: relative;
-    width: 50em;
-    margin: 0 auto;
     @include transition(left .3s ease-in-out);
 
     a {
-        display: table-cell;
-        text-decoration: none;
-        vertical-align: middle;
+        display: block;
+        padding: 0.4375em 0.8125em; // 7/16 13/16
         @include transition(color .3s ease-in-out);
-    }
-
-    ul {
-        margin: 0 auto;
-        padding: 0;
-        width: 100%;
-
-        > li {
-            float: left;
-            display: table;
-            margin: .5em;
-            padding: .55em .55em;
-            width:8em;
-            cursor: pointer;
-            text-align: center;
-            cursor: pointer;
-            color: #777;
-            @include transition(padding-left .3s ease-in-out);
-
-            > a {
-                //color: #0f92e5;
-                color: #aaa;
-            }
-        }
     }
 }
 
-// small screens
-@media screen and (max-width: 44em) {
-    $menu_width: 20em;
-    $content_offset : .5em;
+// Small screens
+@media screen and (max-width: 44em) { // 704/16
+    $menu_width: 20em; // 320/16
+    $content_offset : .5em; // 8/16
 
     html,
     .hamburger {
@@ -104,95 +86,123 @@ html,
     }
 
     .hamburger-nav {
-        position: absolute;
-        top: 55px;
+        position: fixed;
+        overflow-y: scroll;
+        top: 3.4375em; // 55/16
         left:-$menu_width;
+        bottom: 0;
         width: $menu_width;
         opacity: 0;
+        background: #151618;
 
+        ul {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        li > ul {
+            position: static;
+            display: block;
+            width: $menu_width;
+        }
         ul > li {
             width: 100%;
-            height: 100%;
-            margin: 0;
-            text-align: left;
-            @include box-shadow(inset 0 2px 0 -1px rgba(0, 0, 0, .1));
-
-            &:first-child {
-                @include box-shadow(inset 0 2px 0 -1px rgba(0, 0, 0, .3));
-            }
-
-            &:last-child {
-                @include box-shadow(inset 0 2px 0 -1px rgba(0, 0, 0, .1), inset 0 -2px 0 -1px rgba(0, 0, 0, .3));
-            }
-
-            &:hover {
-                @include box-shadow(inset 0 0 0 1px rgba(255, 255, 255, .1));
-                color: #fff;
-
-                > a {
-                     color: #fff;
-                }
-            }
         }
     }
 
     .hamburger-label {
         display: block;
         z-index: 1;
+        @include transition(left .3s ease-in-out, box-shadow 0s 0s ease-in-out);
     }
 
     .hamburger-label:after {
         position: absolute;
-        top: 0;
-        right: .25em;
+        top: .4814814815em; // 13/27
+        right: .4814814815em; // 13/27
         content:"\2261";
-        font-size: 1.8em;
+        font-size: 1.8em; // 27/15
     }
 
     .hamburger-label:hover {
-        color: #0f92e5;
+        color: #d22;
     }
     .hamburger-checkbox:checked ~ .hamburger-label {
-        color: #eee;
+        color: #a0a2a2;
+        left: $menu_width + $content_offset - 3.5em;
+        background: rgba(255,255,255,.05);
+        @include transition(left .3s ease-in-out, box-shadow .2s .3s ease-in-out);
+        @include box-shadow(inset 0 2px 0 -1px rgba(255,255,255,0.08), 0 0 0 1px rgba(0,0,0,.4));
     }
 
     .hamburger-checkbox:checked ~ nav[role="off-canvas"] {
         left: 0;
         opacity: 1;
-        @include box-shadow(-30em 0 0 30em rgba(0, 0, 0, .8));
+        @include box-shadow(-30em 0 0 30em #151618, inset 0 10px 10px  -10px rgba(0,0,0,1));
 
-        ul > li {
-            padding: .55em .55em .55em 1.5em;
-            background: rgba(0,0,0,.75);
-
+        li {
             &:hover {
-                padding-left: 1.8em;
-                background: #0074C2;
+                background: transparent;
+            }
+            > ul {
+                background: transparent;
+            }
+        }
+        > ul {
+            display: block;
 
-                &:after {
-                    right: .6em;
+            > li {
+                &:first-child a {
+                    @include box-shadow(0 -2px 0 -1px rgba(0, 0, 0, 1), inset 0 -2px 0 -1px rgba(0, 0, 0, 1), inset 0 2px 0 -1px rgba(255, 255, 255, 0.05));
                 }
             }
+        }
+        ul > li  {
 
-            &:after {
-                position: absolute;
-                display: block;
-                text-align: center;
-                right: .7em;
-                width: 22px;
-                height: 22px;
-                @include border-radius(11px);
-                content:"\203A";
-                font: bold 1.4em $sans;
-                line-height: .9em;
-                color: inherit;
-                background: rgba(0,0,0,.2);
+            a {
+                padding: .75em 3.625em .75em 1.5em; // 12/16 58/16 12/16 24/16
+                color: #a0a2a2;
+                text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+                //background: rgba(22,22,25,.96);
+                @include box-shadow(inset 0 -2px 0 -1px rgba(0, 0, 0, 1), inset 0 2px 0 -1px rgba(255, 255, 255, 0.05));
+                @include transition(all .3s ease-in-out);
+
+                &:hover {
+                    color: #fff;
+                    padding-left: 1.6875em; // 27/16
+                    background: #a22;
+                    border-left: none;
+                    @include box-shadow(inset 0 0 0 1px rgba(255, 255, 255, .1));
+
+                    &:after {
+                        right: .6em;
+                    }
+                }
+
+                &:after {
+                    position: absolute;
+                    text-align: center;
+                    right: .6818181818em; // 15/22
+                    width: 1em;
+                    height: 1em;
+                    @include border-radius(11px);
+                    content:"\203A";
+                    font-size: 1.375em; // 22/16
+                    line-height: .9090909091em; // 20/22
+                    color: inherit;
+                }
             }
         }
     }
 
-    .hamburger-checkbox:checked ~ .content {
+    .hamburger-checkbox:checked ~ .condiments,
+    .hamburger-checkbox:checked ~ h1 {
         margin-left: $menu_width + $content_offset;
         margin-right:-($menu_width + $content_offset);
+    }
+    .hamburger-checkbox:checked ~ footer,
+    .hamburger-checkbox:checked ~ .colophon {
+        margin-left: $menu_width;
+        margin-right:-($menu_width);
     }
 }

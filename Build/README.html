@@ -54,30 +54,30 @@
 
 <h3 id="indexhtml">index.html</h3>
 
-<p>If you take a look at <code>index.html</code> in your editor, you&rsquo;ll find it is mostly Hammer methods and helpers. See <a href="http://help.hammerformac.com/">Hammer&rsquo;s Help Docs</a> for full documentation.</p>
+<p>If you take a look at <code>index.html</code> in your editor, you&#8217;ll find it is mostly Hammer methods and helpers. See <a href="http://help.hammerformac.com/">Hammer&#8217;s Help Docs</a> for full documentation.</p>
 
 <p>The most basic and super useful helpers are the HTML includes <code>_head</code>, <code>_nav</code>, and <code>_footer</code>.</p>
 
-<p>I&rsquo;ve added a couple handy variables as well. </p>
+<p>I&#8217;ve added a couple handy variables as well. </p>
 
 <ul>
-  <li><code>$title</code> sets the page title. If you don&rsquo;t set the title, it falls back to &ldquo;Anvil.&rdquo; Change the default value in <code>_head.html</code>.</li>
-  <li><code>$body-class</code> sets the body class(s) to whatever you like. It defaults to &ldquo;default.&rdquo; Change the default value in <code>_head.html</code>.</li>
+  <li><code>$title</code> sets the page title. If you don&#8217;t set the title, it falls back to &#8220;Anvil.&#8221; Change the default value in <code>_head.html</code>.</li>
+  <li><code>$body-class</code> sets the body class(s) to whatever you like. It defaults to &#8220;default.&#8221; Change the default value in <code>_head.html</code>.</li>
 </ul>
 
 <p>Take a look in <code>_head.html</code> and <code>_footer.html</code> to see how stylesheets and javascript files are pulled using the Hammer syntax.</p>
 
 <h3 id="displayhtml">display.html</h3>
 
-<p>Personally, I prefer to do a good portion of my styling before I add any classes. To make this easier on myself, I&rsquo;ve added just about every non-depreciated HTML element to this single page. Ideally, you would use this to set your global styles in <code>_base.scss</code>.</p>
+<p>Personally, I prefer to do a good portion of my styling before I add any classes. To make this easier on myself, I&#8217;ve added just about every non-depreciated HTML element to this single page. Ideally, you would use this to set your global styles in <code>_base.scss</code>.</p>
 
 <p>You can search for any element by tag, <code>&lt;pre&gt;</code> and most elements by namde, <code>unordered list</code>.</p>
 
-<p>Under the heading <strong>Custom class elements</strong>, you will find any HTML elements that I&rsquo;ve added custom classes to. These show off some partials and any javascript I&rsquo;ve added that rely on classes.</p>
+<p>Under the heading <strong>Custom class elements</strong>, you will find any HTML elements that I&#8217;ve added custom classes to. These show off some partials and any javascript I&#8217;ve added that rely on classes.</p>
 
 <h3 id="hamburgerhtml">hamburger.html</h3>
 
-<p>This shows off a responsive menu very similar to a bagillion app hamburger menus. Hamburger refers to the three bar menu icon. It is almost entirely based on Tim Pietrusky&rsquo;s <a href="http://codepen.io/TimPietrusky/pen/CLIsl">Off Canvas menu</a>. Customize it in <code>_menu-hamburger.scss</code>.</p>
+<p>This shows off a responsive menu very similar to a bagillion app hamburger menus. Hamburger refers to the three bar menu icon. It is almost entirely based on Tim Pietrusky&#8217;s <a href="http://codepen.io/TimPietrusky/pen/CLIsl">Off Canvas menu</a>. Customize it in <code>_menu-hamburger.scss</code>.</p>
 
 <h3 id="html">404.html</h3>
 
@@ -85,17 +85,17 @@
 
 <h2 id="styling-anvil">Styling Anvil</h2>
 
-<p>You&rsquo;ll notice style.css and <code>style.scss</code> in the CSS folder. Hammer requires a <code>style.css</code> file to compile SCSS files to. It gets overwritten, so it doesn&rsquo;t matter what is in <code>style.css</code> as long as the file is there.</p>
+<p>You&#8217;ll notice style.css and <code>style.scss</code> in the CSS folder. Hammer requires a <code>style.css</code> file to compile SCSS files to. It gets overwritten, so it doesn&#8217;t matter what is in <code>style.css</code> as long as the file is there.</p>
 
 <p><code>style.css</code> is where every SCSS file is pulled into and determines the order the styles appear on the build <code>style.css</code> file. The comments provide brief descriptions of what each imported file contains. Note that all single-line comments are stripped from the build file.</p>
 
-<p>Put all your main styles in <code>_main.scss</code>. If you&rsquo;re unfamiliar with SASS, don&rsquo;t sweat it. Standard CSS works just fine.</p>
+<p>Put all your main styles in <code>_main.scss</code>. If you&#8217;re unfamiliar with SASS, don&#8217;t sweat it. Standard CSS works just fine.</p>
 
-<p>For those of you who love your SASS, check out <code>_variables.scss</code> and <code>_mixins.scss</code> to see some of my shortcuts. You can also just remove <code>_mixins.scss</code> and use Hammer&rsquo;s built-in <a href="http://bourbon.io/">Bourbon</a> mixins.</p>
+<p>For those of you who love your SASS, check out <code>_variables.scss</code> and <code>_mixins.scss</code> to see some of my shortcuts. You can also just remove <code>_mixins.scss</code> and use Hammer&#8217;s built-in <a href="http://bourbon.io/">Bourbon</a> mixins.</p>
 
 <h3 id="scss-partials">SCSS Partials</h3>
 
-<p>These are optional sections that might come in handy and save you a little styling time. I&rsquo;ll probably add more or remove them depending on the responses I get.</p>
+<p>These are optional sections that might come in handy and save you a little styling time. I&#8217;ll probably add more or remove them depending on the responses I get.</p>
 
 <h4 id="included-partials">Included Partials</h4>
 <p><code>_buttons.scss</code><br />
@@ -108,13 +108,13 @@ Two form element sets are included. The default active one is for all form eleme
 Super sexy Bootstrap-style grid generator. It uses the same syntax as the responsive Bootstrap grids. You can change the variable values to generate your own preferred grids. This currently does not support fluid, percentage-based, grids. Yet.</p>
 
 <p><code>_menu-hamburger.scss</code><br />
-This utilizes a checkbox hack in order to create a Google or Facebook hamburger-style menu. See it in action on <code>hamburger.html</code>. Note that using it as a responsive menu isn&rsquo;t exactly the most semantic option, however, it sure is neato.</p>
+This utilizes a checkbox hack in order to create a Google or Facebook hamburger-style menu. See it in action on <code>hamburger.html</code>. Note that using it as a responsive menu isn&#8217;t exactly the most semantic option, however, it sure is neato.</p>
 
 <h2 id="things-to-note">Things to note</h2>
 <p>If you opt to use <a href="http://bourbon.io/">Bourbon</a> mixins and remove my mixins, you will need to go through and change almost all of the mixins throughout the stylesheets.</p>
 
-<p>If you don&rsquo;t plan on using one or more of the partials or SCSS files, simply comment them out. Again, anything commented out with a single-line comment <code>//</code> will not end up in the final build.</p>
+<p>If you don&#8217;t plan on using one or more of the partials or SCSS files, simply comment them out. Again, anything commented out with a single-line comment <code>//</code> will not end up in the final build.</p>
 
-<p>Go to HTML5 Boilerplate&rsquo;s website, if you haven&rsquo;t already, and familiarize yourself with the endless goodies they&rsquo;ve put together. Most of those are in Anvil.</p>
+<p>Go to HTML5 Boilerplate&#8217;s website, if you haven&#8217;t already, and familiarize yourself with the endless goodies they&#8217;ve put together. Most of those are in Anvil.</p>
 
 <p>I made this entirely for myself. I <del>encourage</del> <strong>dare</strong> you to make something even better.</p>

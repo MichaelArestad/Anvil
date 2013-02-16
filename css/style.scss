@@ -20,6 +20,7 @@ Copyright:
 @import "scss/_base"; // Contains base element styling
 
 // Begin partials
+@import "scss/partials/_nav-horizontal"; // Horizontal menus
 @import "scss/partials/_buttons"; // Funk button styles
 @import "scss/partials/_form"; // Form and input styles
 @import "scss/partials/_grid-responsive"; // Responsive Bootstrap grid
